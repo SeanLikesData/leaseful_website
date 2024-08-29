@@ -255,6 +255,13 @@ footer {
     color: var(--text-color);
     cursor: pointer;
 }
+.footer-brand img.yuzu-logo {
+    height: 10px; 
+    width: auto; 
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
 @media (max-width: 768px) {
     .nav-links {
         display: none;
