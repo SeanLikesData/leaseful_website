@@ -131,6 +131,7 @@ nav {
     position: relative;
     overflow: visible;
 }
+
 .hero::before {
     content: "";
     position: absolute;
@@ -138,13 +139,15 @@ nav {
     left: 0;
     right: 0;
     bottom: 0;
-    background: url('data:image/svg+xml;utf8,<svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="rgba(255,255,255,0.1)"/></svg>') 0 0/100px 100px;
+    background-image: url("bkg_ptn_1.svg");
+    background-size: 100px 100px;
     opacity: 0.5;
-    pointer-events: none;
-}
-.hero-content {
-    position: relative;
     z-index: 1;
+}
+
+.hero .container {
+    position: relative;
+    z-index: 2;
 }
 .hero h1, .hero p, .hero .cta-button {
     position: relative; /* Add this line */
@@ -197,6 +200,30 @@ nav {
 .platform-screenshot:hover {
     transform: translateY(-10px);
 }
+
+.features-section {
+    position: relative;
+    background-color: var(--bg-color);
+    overflow: hidden;
+}
+
+.features-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("bkg_ptn_5.svg");
+    background-size: 400px 400px;
+    opacity: 0.7;
+    z-index: 1;
+}
+
+.features-section .container {
+    position: relative;
+    z-index: 2;
+}
 .feature {
     display: flex;
     align-items: center;
@@ -238,15 +265,103 @@ nav {
     margin-bottom: calc(var(--spacing-unit) * 2);
 }
 .cta-section {
-    background-color: var(--card-bg-color);
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    color: white;
     padding: calc(var(--spacing-unit) * 10) 0;
     text-align: center;
+    position: relative;
+    overflow: hidden;
 }
-footer {
+
+.cta-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("bkg_ptn_4.svg");
+    background-size: 100px 100px;
+    opacity: 0.5;
+    z-index: 1;
+}
+
+.cta-section .container {
+    position: relative;
+    z-index: 2;
+}
+
+.cta-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: calc(var(--spacing-unit) * 3);
+}
+
+.cta-section p {
+    font-size: 1.2rem;
+    margin-bottom: calc(var(--spacing-unit) * 4);
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: transparent;
+    color: white;
+    padding: calc(var(--spacing-unit) * 2) calc(var(--spacing-unit) * 4);
+    text-decoration: none;
+    border-radius: 0.25rem;
+    transition: all 0.3s;
+    font-weight: bold;
+    border: 2px solid white;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.cta-button:hover {
+    background-color: rgba(255,255,255,0.1);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0,0,0,0.15);
+}
+.footer-main {
     background-color: var(--card-bg-color);
     padding: calc(var(--spacing-unit) * 4) 0;
     text-align: center;
 }
+.footer-brand {
+    background-color:#1F2937;
+    color:white;
+    padding: calc(var(--spacing-unit) * 4) 0;
+}
+.footer-brand .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-brand-item {
+    flex: 1;
+    display:flex;
+    align-items: center;
+    gap: 5px;
+}
+.footer-brand-item:first-child {
+    justify-content: flex-start;
+}
+.footer-brand-item:last-child {
+    justify-content: flex-end;
+}
+.footer-brand a {
+    color: var(--bg-color);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+}
+.footer-brand img.yuzu-logo {
+    height: 35px;
+    width: auto;
+    vertical-align: middle;
+    margin-left: -15px;
+}
+
+
+
 .mobile-menu-toggle {
     display: none;
     background: none;
@@ -255,12 +370,7 @@ footer {
     color: var(--text-color);
     cursor: pointer;
 }
-.footer-brand img.yuzu-logo {
-    height: 10px; 
-    width: auto; 
-    margin-right: 5px;
-    vertical-align: middle;
-}
+
 
 @media (max-width: 768px) {
     .nav-links {
@@ -311,5 +421,17 @@ footer {
     .feature-content, .feature-image {
         max-width: 100%;
         padding: calc(var(--spacing-unit) * 2) 0;
+    }
+}
+@media (max-width: 768px) {
+    .footer-brand .container {
+        flex-direction: column;
+        gap: calc(var(--spacing-unit) * 2);
+    }
+
+    .footer-brand-item,
+    .footer-brand-item:first-child,
+    .footer-brand-item:last-child {
+        text-align: center;
     }
 }
