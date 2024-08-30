@@ -6,7 +6,41 @@
     --text-color: #1F2937;
     --card-bg-color: #F3F4F6;
     --spacing-unit: 8px;
+    --svg-bg-color: rgba(59, 130, 246, 0.1); /* Light blue background for light mode */
+    --svg-pattern-color: rgba(59, 130, 246, 0.5); /* Darker blue pattern for light mode */
 }
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 calc(var(--spacing-unit) * 2);
+}
+header {
+    padding: calc(var(--spacing-unit) * 2) 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background-color: var(--bg-color);
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s, color 0.3s;
+}
+body.dark-mode {
+    --bg-color: #111827;
+    --text-color: #F9FAFB;
+    --card-bg-color: #1F2937;
+    --svg-bg-color: rgba(31, 41, 55, 0.7); /* Dark background for dark mode */
+    --svg-pattern-color: rgba(59, 130, 246, 0.3); /* Lighter blue pattern for dark mode */
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
 
 .logo {
@@ -59,35 +93,7 @@
 .logo-icon, .logo-text {
     transition: all 0.3s ease;
 }
-body.dark-mode {
-    --bg-color: #111827;
-    --text-color: #F9FAFB;
-    --card-bg-color: #1F2937;
-}
-body {
-    font-family: 'Inter', sans-serif;
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    transition: background-color 0.3s, color 0.3s;
-}
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 calc(var(--spacing-unit) * 2);
-}
-header {
-    padding: calc(var(--spacing-unit) * 2) 0;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    background-color: var(--bg-color);
-    z-index: 1000;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
+
 nav {
     display: flex;
     justify-content: space-between;
@@ -203,7 +209,7 @@ nav {
 
 .features-section {
     position: relative;
-    background-color: var(--bg-color);
+    /* background-color: var(--bg-color); */
     overflow: hidden;
 }
 
@@ -214,9 +220,12 @@ nav {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url("bkg_ptn_5.svg");
-    background-size: 400px 400px;
-    opacity: 0.7;
+    background-color: var(--svg-bg-color);
+    mask-image: url("bkg_ptn_5.svg");
+    -webkit-mask-image: url("bkg_ptn_5.svg");
+    mask-size: 400px 400px;
+    -webkit-mask-size: 400px 400px;
+    opacity: 0.5;
     z-index: 1;
 }
 
