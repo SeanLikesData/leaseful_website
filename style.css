@@ -41,6 +41,8 @@ body {
     margin: 0;
     padding: 0;
     transition: background-color 0.3s, color 0.3s;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
 }
 body.dark-mode {
     --bg-color: #111827;
