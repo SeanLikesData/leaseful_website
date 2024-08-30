@@ -6,7 +6,7 @@
     --text-color: #1F2937;
     --card-bg-color: #F3F4F6;
     --spacing-unit: 8px;
-    --svg-bg-color: rgba(59, 130, 246, 0.1); /* Light blue background for light mode */
+    --svg-bg-color: rgba(59, 130, 246, 0.2); /* Light blue background for light mode */
     --svg-pattern-color: rgba(59, 130, 246, 0.5); /* Darker blue pattern for light mode */
 }
 .container {
@@ -225,7 +225,6 @@ nav {
     -webkit-mask-image: url("bkg_ptn_5.svg");
     mask-size: 400px 400px;
     -webkit-mask-size: 400px 400px;
-    opacity: 0.8;
     z-index: 1;
 }
 
